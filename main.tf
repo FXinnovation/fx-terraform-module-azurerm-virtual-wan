@@ -1,5 +1,5 @@
 locals {
-  should_creare_vpn_gateway = var.enabled && var.vpn_gateway_enabled
+  should_create_vpn_gateway = var.enabled && var.vpn_gateway_enabled
 }
 
 ###
@@ -61,7 +61,7 @@ resource "azurerm_virtual_hub" "this_hub" {
 ###
 
 resource "azurerm_vpn_gateway" "this_gateway" {
-  count               = local.should_creare_vpn_gateway ? length(var.hub_name) : 0
+  count               = local.should_create_vpn_gateway ? length(var.hub_name) : 0
   name                = element(var.gateway_name, count.index)
   location            = element(var.gateway_location, count.index)
   virtual_hub_id      = element(azurerm_virtual_hub.this_hub.*.id, count.index)
