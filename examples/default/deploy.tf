@@ -27,10 +27,10 @@ module "example" {
     env = "test"
   }
 
-  name            = "tftest${random_string.this.result}"
-  hub_names       = ["foo"]
-  hub_locations   = ["francecentral"]
-  address_prefixs = ["10.0.0.0/24"]
+  name             = "tftest${random_string.this.result}"
+  hub_names        = ["foo"]
+  hub_locations    = ["francecentral"]
+  address_prefixes = ["10.0.0.0/24"]
 
   routes = [
     {
@@ -42,12 +42,4 @@ module "example" {
   virtual_hub_tags = {
     env = "testtf"
   }
-
-  vpn_gateway_enabled  = true
-  gateway_names        = ["boo"]
-  gateway_locations    = ["francecentral"]
-  vpn_gateway_hub_ids  = ["foo"]
-  vpn_gateway_bgp_asns = ["65515"]
-  peer_weights         = ["0"]
-
 }

@@ -75,7 +75,7 @@ variable "hub_locations" {
   default     = [""]
 }
 
-variable "address_prefixs" {
+variable "address_prefixes" {
   description = "Address prefix of the which should be used for the virtual hub."
   type        = list(string)
   default     = [""]
@@ -119,13 +119,13 @@ variable "gateway_locations" {
   default     = [""]
 }
 
-variable "vpn_gateway_bgp_asns" {
+variable "vpn_gateway_settings_bgp_asns" {
   description = "Autonomous system number (ASN) of BGP speaker. Changing this forces a new resourceto be created."
   type        = list(string)
   default     = []
 }
 
-variable "peer_weights" {
+variable "vpn_gateway_settings_peer_weights" {
   description = "The weight added to Routes learned from this BGP Speaker. Changing this forces a new resource to be created."
   type        = list(string)
   default     = [""]

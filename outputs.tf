@@ -12,7 +12,7 @@ output "wan_id" {
 ###
 
 output "virtual_hub_ids" {
-  description = "virtual hub ids"
+  description = " The ids of the Virtual Hub."
   value       = compact(concat(azurerm_virtual_hub.this_hub.*.id, [""]))
 }
 
