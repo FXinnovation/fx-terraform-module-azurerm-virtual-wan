@@ -47,7 +47,7 @@ module "example" {
   gateway_names        = ["boo"]
   gateway_locations    = ["francecentral"]
   vpn_gateway_hub_ids  = ["foo"]
-  vpn_gateway_bgp_asns = ["65010"]
-  peer_weights         = ["32768"]
+  vpn_gateway_bgp_asns = ["65515"]
+  peer_weights         = ["0"]
 
 }
