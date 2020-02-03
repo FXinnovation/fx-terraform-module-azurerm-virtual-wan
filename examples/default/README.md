@@ -31,7 +31,6 @@ terraform destroy
 
 | Name | Description |
 |------|-------------|
-| bgp\_address | n/a |
 | virtual\_hub\_ids | n/a |
 | vpn\_gateway\_ids | n/a |
 | wan\_id | n/a |

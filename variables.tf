@@ -9,6 +9,7 @@ variable "enabled" {
 
 variable "resource_group_name" {
   description = "Specifies the resource group where the virtual WAN is created. Changing this forces a new resource to be created."
+  default     = ""
   type        = string
 }
 
@@ -24,11 +25,13 @@ variable "tags" {
 variable "name" {
   description = "Specifies the name of virtual WAN. Changing this forces a new resource to be created."
   type        = string
+  default     = ""
 }
 
 variable "location" {
   description = "Specifies the location of the Virtual WAN. Changing this forces a new resource to be created."
   type        = string
+  default     = ""
 }
 
 variable "disable_vpn_encryption" {
@@ -63,16 +66,19 @@ variable "wan_tags" {
 variable "hub_names" {
   description = "List of virtual hub names that will be created."
   type        = list(string)
+  default     = [""]
 }
 
 variable "hub_locations" {
   description = "List of regions where the virtual hub will be created using this module."
   type        = list(string)
+  default     = [""]
 }
 
 variable "address_prefixs" {
   description = "Address prefix of the which should be used for the virtual hub."
   type        = list(string)
+  default     = [""]
 }
 
 variable "routes" {
@@ -122,7 +128,7 @@ variable "vpn_gateway_bgp_asns" {
 variable "peer_weights" {
   description = "The weight added to Routes learned from this BGP Speaker. Changing this forces a new resource to be created."
   type        = list(string)
-  default     = []
+  default     = [""]
 }
 
 variable "gateway_tags" {
