@@ -25,6 +25,6 @@ output "vpn_gateway_ids" {
   value       = compact(concat(azurerm_vpn_gateway.this_gateway.*.id, [""]))
 }
 
-output "bgp_address" {
-  value = compact(concat(azurerm_vpn_gateway.this_gateway.*.bgp_peering_address, [""]))
-}
+# output "bgp_address" {
+#   value = compact(concat(azurerm_vpn_gateway.this_gateway.*.bgp_peering_address, [""]))
+# }
