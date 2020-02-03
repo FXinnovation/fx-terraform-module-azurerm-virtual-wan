@@ -27,10 +27,10 @@ module "example" {
     env = "test"
   }
 
-  name           = "tftest${random_string.this.result}"
-  hub_name       = ["foo"]
-  hub_location   = ["francecentral"]
-  address_prefix = ["10.0.0.0/24"]
+  name            = "tftest${random_string.this.result}"
+  hub_names       = ["foo"]
+  hub_locations   = ["francecentral"]
+  address_prefixs = ["10.0.0.0/24"]
 
   routes = [
     {

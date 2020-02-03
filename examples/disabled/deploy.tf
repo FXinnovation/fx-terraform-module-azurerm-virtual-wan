@@ -13,8 +13,8 @@ module "example" {
   name                = "tftest"
   location            = "francecentral"
   resource_group_name = module.resource_group_demo.name
-  hub_name            = ["boo"]
-  hub_location        = ["francecentral"]
-  address_prefix      = ["10.0.0.0/24"]
+  hub_names           = ["boo"]
+  hub_locations       = ["francecentral"]
+  address_prefixs     = ["10.0.0.0/24"]
 
 }
