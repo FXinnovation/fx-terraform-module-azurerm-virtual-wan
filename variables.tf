@@ -60,17 +60,17 @@ variable "wan_tags" {
 # virtual hub
 ###
 
-variable "hub_name" {
+variable "hub_names" {
   description = "List of virtual hub names that will be created."
   type        = list(string)
 }
 
-variable "hub_location" {
+variable "hub_locations" {
   description = "List of regions where the virtual hub will be created using this module."
   type        = list(string)
 }
 
-variable "address_prefix" {
+variable "address_prefixs" {
   description = "Address prefix of the which should be used for the virtual hub."
   type        = list(string)
 }
@@ -95,26 +95,34 @@ variable "vpn_gateway_enabled" {
   default     = false
 }
 
-variable "gateway_name" {
+variable "gateway_names" {
   description = "List of gateway name that will be created inside this module."
   type        = list(string)
   default     = [""]
 }
 
-variable "gateway_location" {
+variable "vpn_gateway_hub_ids" {
+  description = "ids of the virtaul hub to whcih the vpn gateway is attached. Changing this will force to create new resource. "
+  type        = list(string)
+  default     = [""]
+}
+
+variable "gateway_locations" {
   description = "List of regions where the vpn gateway will be created using this module."
   type        = list(string)
   default     = [""]
 }
 
-variable "asn" {
+variable "vpn_gateway_bgp_asns" {
   description = "Autonomous system number (ASN) of BGP speaker. Changing this forces a new resourceto be created."
-  default     = ""
+  type        = list(string)
+  default     = []
 }
 
-variable "peer_weight" {
+variable "peer_weights" {
   description = "The weight added to Routes learned from this BGP Speaker. Changing this forces a new resource to be created."
-  default     = ""
+  type        = list(string)
+  default     = []
 }
 
 variable "gateway_tags" {

@@ -11,22 +11,29 @@ terraform destroy
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| azurerm | ~>1.41.0 |
+| random | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| client\_id |  | string | n/a | yes |
-| client\_secret |  | string | n/a | yes |
-| subscription\_id |  | string | n/a | yes |
-| tenant\_id |  | string | n/a | yes |
+|------|-------------|------|---------|:-----:|
+| client\_id | n/a | `string` | n/a | yes |
+| client\_secret | n/a | `string` | n/a | yes |
+| subscription\_id | n/a | `string` | n/a | yes |
+| tenant\_id | n/a | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| bgp\_address |  |
-| virtual\_hub\_ids |  |
-| vpn\_gateway\_ids |  |
-| wan\_id |  |
+| bgp\_address | n/a |
+| virtual\_hub\_ids | n/a |
+| vpn\_gateway\_ids | n/a |
+| wan\_id | n/a |
 
-<!-- END OF PRE_COMMIT_TERRAFORM DOCS HOOK -->
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

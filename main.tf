@@ -1,5 +1,6 @@
 locals {
   should_create_vpn_gateway = var.enabled && var.vpn_gateway_enabled
+  vpn_hub_id                = zipmap(var.hub_names, concat(azurerm_virtual_hub.this_hub.*.id, [""]))
 }
 
 ###
@@ -30,10 +31,10 @@ resource "azurerm_virtual_wan" "this" {
 ###
 
 resource "azurerm_virtual_hub" "this_hub" {
-  count               = var.enabled ? length(var.hub_name) : 0
-  name                = element(var.hub_name, count.index)
-  location            = element(var.hub_location, count.index)
-  address_prefix      = element(var.address_prefix, count.index)
+  count               = var.enabled ? length(var.hub_names) : 0
+  name                = var.hub_names[count.index]
+  location            = var.hub_locations[count.index]
+  address_prefix      = var.address_prefixs[count.index]
   resource_group_name = var.resource_group_name
   virtual_wan_id      = element(concat(azurerm_virtual_wan.this.*.id, [""]), 0)
 
@@ -61,14 +62,14 @@ resource "azurerm_virtual_hub" "this_hub" {
 ###
 
 resource "azurerm_vpn_gateway" "this_gateway" {
-  count               = local.should_create_vpn_gateway ? length(var.hub_name) : 0
-  name                = element(var.gateway_name, count.index)
-  location            = element(var.gateway_location, count.index)
-  virtual_hub_id      = element(azurerm_virtual_hub.this_hub.*.id, count.index)
+  count               = local.should_create_vpn_gateway ? length(var.gateway_names) : 0
+  name                = var.gateway_names[count.index]
+  location            = var.gateway_locations[count.index]
+  virtual_hub_id      = lookup(local.vpn_hub_id, element(var.vpn_gateway_hub_ids, count.index), null)
   resource_group_name = var.resource_group_name
   bgp_settings {
-    asn         = var.asn
-    peer_weight = var.peer_weight
+    asn         = var.vpn_gateway_bgp_asns[count.index]
+    peer_weight = var.peer_weights[count.index]
   }
 
   tags = merge(
