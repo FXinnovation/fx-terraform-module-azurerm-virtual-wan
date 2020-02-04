@@ -83,7 +83,7 @@ variable "address_prefixes" {
 
 variable "routes" {
   description = "One or more hub route to create."
-  type        = list(object({ address_prefixes = list(string), next_hop_ip_address = string }))
+  type        = list(list(object({ address_prefixes = list(string), next_hop_ip_address = string })))
   default     = []
 }
 

@@ -43,7 +43,7 @@ resource "azurerm_virtual_hub" "this_hub" {
   virtual_wan_id      = element(concat(azurerm_virtual_wan.this.*.id, [""]), 0)
 
   dynamic "route" {
-    for_each = var.routes
+    for_each = var.routes[count.index]
 
     content {
       address_prefixes    = route.value.address_prefixes

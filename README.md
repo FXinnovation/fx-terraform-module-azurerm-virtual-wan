@@ -28,7 +28,7 @@ See `examples` folders for usage of this module.
 | name | Specifies the name of virtual WAN. Changing this forces a new resource to be created. | `string` | `""` | no |
 | office365\_local\_breakout\_category | Describes the Offfice365 local breakout category.Possible value are `Optimize`, `OptimizaAndAllow`, `All`, `None` . | `string` | `"None"` | no |
 | resource\_group\_name | Specifies the resource group where the virtual WAN is created. Changing this forces a new resource to be created. | `string` | `""` | no |
-| routes | One or more hub route to create. | `list(object({ address_prefixes = list(string), next_hop_ip_address = string }))` | `[]` | no |
+| routes | One or more hub route to create. | `list(list(object({ address_prefixes = list(string), next_hop_ip_address = string })))` | `[]` | no |
 | tags | Tags shared by all resources of this module. Will be merged with any other specific tags by resource | `map` | `{}` | no |
 | virtual\_hub\_tags | Tags specific to the virtual Hub. | `map` | `{}` | no |
 | vpn\_gateway\_enabled | whether or not to create a vpn gateway | `bool` | `false` | no |
