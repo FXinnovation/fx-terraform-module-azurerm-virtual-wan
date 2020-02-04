@@ -1,3 +1,7 @@
+###
+# locals
+###
+
 locals {
   should_create_vpn_gateway = var.enabled && var.vpn_gateway_enabled
   vpn_hub_id                = var.enabled ? zipmap(var.hub_names, compact(concat(azurerm_virtual_hub.this_hub.*.id, [""]))) : {}
