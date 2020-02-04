@@ -75,7 +75,7 @@ resource "azurerm_vpn_gateway" "this_gateway" {
     asn         = var.vpn_gateway_settings_bgp_asns[count.index]
     peer_weight = var.vpn_gateway_settings_peer_weights[count.index]
   }
-
+  depends_on = [azurerm_virtual_hub.this_hub]
   tags = merge(
     var.tags,
     var.gateway_tags,

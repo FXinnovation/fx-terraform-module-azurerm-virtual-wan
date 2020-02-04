@@ -32,13 +32,6 @@ module "example" {
   hub_locations    = ["francecentral"]
   address_prefixes = ["10.0.0.0/24"]
 
-  routes = [
-    {
-      address_prefixes    = ["10.0.1.0/24"]
-      next_hop_ip_address = "10.0.100.4"
-    },
-  ]
-
   virtual_hub_tags = {
     env = "testtf"
   }
