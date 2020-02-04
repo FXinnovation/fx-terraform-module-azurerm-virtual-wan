@@ -43,6 +43,6 @@ See `examples` folders for usage of this module.
 |------|-------------|
 | virtual\_hub\_ids | The ids of the Virtual Hub. |
 | vpn\_gateway\_ids | ID of the vpn gateway created. |
-| wan\_id | ids of the virtual wan |
+| wan\_id | ids of the virtual wan. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

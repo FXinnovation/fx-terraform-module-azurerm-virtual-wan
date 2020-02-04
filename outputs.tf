@@ -3,7 +3,7 @@
 ###
 
 output "wan_id" {
-  description = "ids of the virtual wan"
+  description = "ids of the virtual wan."
   value       = concat(azurerm_virtual_wan.this.*.id, [""])[0]
 }
 
