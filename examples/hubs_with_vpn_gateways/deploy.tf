@@ -28,8 +28,8 @@ module "example" {
   }
 
   name             = "tftest${random_string.this.result}"
-  hub_names        = ["toto", "fxtestterra", ]
-  hub_locations    = ["francecentral", "candacentral"]
+  hub_names        = ["foto", "fxterratest", ]
+  hub_locations    = ["francecentral", "canadacentral"]
   address_prefixes = ["10.0.0.0/24", "10.0.1.0/24"]
 
   routes = [
@@ -49,7 +49,7 @@ module "example" {
   vpn_gateway_enabled               = false
   gateway_names                     = ["boo"]
   gateway_locations                 = ["francecentral"]
-  vpn_gateway_hub_ids               = ["fxtestterra"]
+  vpn_gateway_hub_ids               = ["fxterratest"]
   vpn_gateway_settings_bgp_asns     = ["65515"]
   vpn_gateway_settings_peer_weights = ["0"]
 }
