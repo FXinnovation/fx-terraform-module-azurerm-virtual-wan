@@ -38,7 +38,7 @@ resource "azurerm_virtual_hub" "this_hub" {
   count               = var.enabled ? length(var.hub_names) : 0
   name                = var.hub_names[count.index]
   location            = var.hub_locations[count.index]
-  address_prefix      = var.address_prefixes[count.index]
+  address_prefix      = element(var.address_prefixes, count.index)
   resource_group_name = var.resource_group_name
   virtual_wan_id      = element(concat(azurerm_virtual_wan.this.*.id, [""]), 0)
 

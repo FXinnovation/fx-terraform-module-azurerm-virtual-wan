@@ -30,15 +30,15 @@ module "example" {
   name             = "tftest${random_string.this.result}"
   hub_names        = ["toto", "fxtestterra", ]
   hub_locations    = ["francecentral", "candacentral"]
-  address_prefixes = ["10.0.0.0/24"]
+  address_prefixes = ["10.0.0.0/24", "10.0.1.0/24"]
 
   routes = [
     [
-      { address_prefixes = ["10.0.1.0/24"], next_hop_ip_address = "10.0.100.4" },
-      { address_prefixes = ["10.0.2.0/24"], next_hop_ip_address = "10.0.161.4" },
+      { address_prefixes = ["10.0.3.0/24"], next_hop_ip_address = "10.0.100.4" },
+      { address_prefixes = ["10.0.4.0/24"], next_hop_ip_address = "10.0.161.4" },
     ],
     [
-      { address_prefixes = ["10.0.3.0/24"], next_hop_ip_address = "10.0.200.4" }
+      { address_prefixes = ["10.0.5.0/24"], next_hop_ip_address = "10.0.200.4" }
     ],
   ]
 
