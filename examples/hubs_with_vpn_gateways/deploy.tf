@@ -46,9 +46,9 @@ module "example" {
     env = "testtf"
   }
 
-  vpn_gateway_enabled               = false
+  vpn_gateway_enabled               = true
   gateway_names                     = ["boo"]
-  gateway_locations                 = ["francecentral"]
+  gateway_locations                 = ["canadacentral"]
   vpn_gateway_hub_ids               = ["fxterratest"]
   vpn_gateway_settings_bgp_asns     = ["65515"]
   vpn_gateway_settings_peer_weights = ["0"]
