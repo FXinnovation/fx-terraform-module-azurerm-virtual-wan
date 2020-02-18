@@ -30,6 +30,7 @@ See `examples` folders for usage of this module.
 | resource\_group\_name | Specifies the resource group where the virtual WAN is created. Changing this forces a new resource to be created. | `string` | `""` | no |
 | routes | One or more hub route to create. | `list(list(object({ address_prefixes = list(string), next_hop_ip_address = string })))` | `[]` | no |
 | tags | Tags shared by all resources of this module. Will be merged with any other specific tags by resource | `map` | `{}` | no |
+| virtual\_hub\_scale\_units | A list of scale unit for the VPN gateway. | `list(number)` | <pre>[<br>  1<br>]</pre> | no |
 | virtual\_hub\_tags | Tags specific to the virtual Hub. | `map` | `{}` | no |
 | vpn\_gateway\_enabled | whether or not to create a vpn gateway | `bool` | `false` | no |
 | vpn\_gateway\_hub\_ids | ids of the virtaul hub to whcih the vpn gateway is attached. Changing this will force to create new resource. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
