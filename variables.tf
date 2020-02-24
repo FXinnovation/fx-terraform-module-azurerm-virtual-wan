@@ -131,6 +131,12 @@ variable "vpn_gateway_settings_peer_weights" {
   default     = [""]
 }
 
+variable "vpn_gateway_scale_units" {
+  description = "A list of scale unit for the VPN gateway."
+  type        = list(number)
+  default     = [1]
+}
+
 variable "gateway_tags" {
   description = "Tags specific to the vpn gateway."
   default     = {}

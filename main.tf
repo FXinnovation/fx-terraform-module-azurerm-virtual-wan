@@ -71,6 +71,7 @@ resource "azurerm_vpn_gateway" "this_gateway" {
   location            = var.gateway_locations[count.index]
   virtual_hub_id      = lookup(local.vpn_hub_id, element(var.vpn_gateway_hub_ids, count.index), null)
   resource_group_name = var.resource_group_name
+  scale_unit          = var.vpn_gateway_scale_units[count.index]
   bgp_settings {
     asn         = var.vpn_gateway_settings_bgp_asns[count.index]
     peer_weight = var.vpn_gateway_settings_peer_weights[count.index]

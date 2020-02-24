@@ -33,6 +33,7 @@ See `examples` folders for usage of this module.
 | virtual\_hub\_tags | Tags specific to the virtual Hub. | `map` | `{}` | no |
 | vpn\_gateway\_enabled | whether or not to create a vpn gateway | `bool` | `false` | no |
 | vpn\_gateway\_hub\_ids | ids of the virtaul hub to whcih the vpn gateway is attached. Changing this will force to create new resource. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
+| vpn\_gateway\_scale\_units | A list of scale unit for the VPN gateway. | `list(number)` | <pre>[<br>  1<br>]</pre> | no |
 | vpn\_gateway\_settings\_bgp\_asns | Autonomous system number (ASN) of BGP speaker. Changing this forces a new resourceto be created. | `list(string)` | `[]` | no |
 | vpn\_gateway\_settings\_peer\_weights | The weight added to Routes learned from this BGP Speaker. Changing this forces a new resource to be created. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
 | wan\_tags | Tags specific to the virtual WAN. | `map` | `{}` | no |
