@@ -4,16 +4,23 @@
 See `examples` folders for usage of this module.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+| azurerm | >= 2.0.0 |
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | n/a |
+| azurerm | >= 2.0.0 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | address\_prefixes | Address prefix of the which should be used for the virtual hub. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
 | allow\_branch\_to\_branch\_traffic | Boolean flag which describes whether to allow branch to branch traffic. | `bool` | `true` | no |
 | allow\_vnet\_to\_vnet\_traffic | Boolean flag which describes whether to allow vnet to vnet traffic. | `bool` | `false` | no |
