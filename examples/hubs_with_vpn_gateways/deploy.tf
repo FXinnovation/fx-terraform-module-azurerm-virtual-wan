@@ -50,6 +50,6 @@ module "example" {
   gateway_names                     = ["boo"]
   gateway_locations                 = ["canadacentral"]
   vpn_gateway_hub_ids               = ["fxterratest"]
-  vpn_gateway_settings_bgp_asns     = ["65515"]
-  vpn_gateway_settings_peer_weights = ["0"]
+  vpn_gateway_settings_bgp_asns     = [65515]
+  vpn_gateway_settings_peer_weights = [0]
 }

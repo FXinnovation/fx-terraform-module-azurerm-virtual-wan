@@ -84,7 +84,7 @@ variable "address_prefixes" {
 variable "routes" {
   description = "One or more hub route to create."
   type        = list(list(object({ address_prefixes = list(string), next_hop_ip_address = string })))
-  default     = []
+  default     = [[]]
 }
 
 variable "virtual_hub_tags" {
@@ -121,14 +121,14 @@ variable "gateway_locations" {
 
 variable "vpn_gateway_settings_bgp_asns" {
   description = "Autonomous system number (ASN) of BGP speaker. Changing this forces a new resourceto be created."
-  type        = list(string)
-  default     = []
+  type        = list(number)
+  default     = [0]
 }
 
 variable "vpn_gateway_settings_peer_weights" {
   description = "The weight added to Routes learned from this BGP Speaker. Changing this forces a new resource to be created."
-  type        = list(string)
-  default     = [""]
+  type        = list(number)
+  default     = [0]
 }
 
 variable "vpn_gateway_scale_units" {
